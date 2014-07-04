@@ -33,7 +33,7 @@ exports.MeController = UserController.specialize(/** @lends MeController# */ {
     login: {
         value: function () {
             var self = this;
-            this.__loadedFacebook.login({scope: 'user_photos,user_friends'}).then(function (facebook) {
+            this.__loadedFacebook.login({scope: 'user_photos,user_friends,read_stream'}).then(function (facebook) {
                 self._facebook = facebook;
                 loggedInDeferred.resolve(facebook);
                 return facebook;
